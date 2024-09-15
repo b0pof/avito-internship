@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: postgres-6105
+    volumes:
+      - 'postgres-data:/var/lib/postgresql/data'
+    ports:
+      - '5432:5432'
+    user: postgres
+    env_file:
+      - '.env'
+    healthcheck:
+      test: pg_isready
+      interval: 10s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  postgres-data:

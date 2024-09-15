@@ -1,0 +1,523 @@
+{
+	"info": {
+		"_postman_id": "e1192f5e-00cf-4d03-a4aa-fe67f43e9629",
+		"name": "tender",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28142241"
+	},
+	"item": [
+		{
+			"name": "getTenders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cnrprod1725867198-team-77958-33997.avito2024.codenrock.com/api/tenders?limit=10&offset=0&service_type=Construction&service_type=Manufacture",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tenders"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						},
+						{
+							"key": "service_type",
+							"value": "Construction"
+						},
+						{
+							"key": "service_type",
+							"value": "Manufacture"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createTender",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"NEW\",\n  \"description\": \"Tender 2\",\n  \"serviceType\": \"Delivery\",\n  \"organizationId\": \"8b0bd75f-76e8-43f5-bc2a-20edbb834608\",\n  \"creatorUsername\": \"user30\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cnrprod1725867198-team-77958-33997.avito2024.codenrock.com/api/tenders/new",
+					"protocol": "https",
+					"host": [
+						"cnrprod1725867198-team-77958-33997",
+						"avito2024",
+						"codenrock",
+						"com"
+					],
+					"path": [
+						"api",
+						"tenders",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getMyTenders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cnrprod1725867198-team-77958-33997.avito2024.codenrock.com/api/tenders/my?username=user30",
+					"protocol": "https",
+					"host": [
+						"cnrprod1725867198-team-77958-33997",
+						"avito2024",
+						"codenrock",
+						"com"
+					],
+					"path": [
+						"api",
+						"tenders",
+						"my"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "user30"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTenderStatus",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cnrprod1725867198-team-77958-33997.avito2024.codenrock.com/api/tenders/6de2df0d-4f4b-406c-ab0e-98429c0bf713/status?username=user10",
+					"protocol": "https",
+					"host": [
+						"cnrprod1725867198-team-77958-33997",
+						"avito2024",
+						"codenrock",
+						"com"
+					],
+					"path": [
+						"api",
+						"tenders",
+						"6de2df0d-4f4b-406c-ab0e-98429c0bf713",
+						"status"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "user10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateTenderStatus",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cnrprod1725867198-team-77958-33997.avito2024.codenrock.com/api/tenders/dbcc8d9c-abc2-4d6e-ab2a-dc3600b78aa4/status?username=user30&status=Published",
+					"protocol": "https",
+					"host": [
+						"cnrprod1725867198-team-77958-33997",
+						"avito2024",
+						"codenrock",
+						"com"
+					],
+					"path": [
+						"api",
+						"tenders",
+						"dbcc8d9c-abc2-4d6e-ab2a-dc3600b78aa4",
+						"status"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "user30"
+						},
+						{
+							"key": "status",
+							"value": "Published"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createBid",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"From user\",\n  \"description\": \"string\",\n  \"tenderId\": \"dbcc8d9c-abc2-4d6e-ab2a-dc3600b78aa4\",\n  \"authorType\": \"User\",\n  \"authorId\": \"3eaf487f-c009-4cc7-93b9-b6cfdb569e57\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cnrprod1725867198-team-77958-33997.avito2024.codenrock.com/api/bids/new",
+					"protocol": "https",
+					"host": [
+						"cnrprod1725867198-team-77958-33997",
+						"avito2024",
+						"codenrock",
+						"com"
+					],
+					"path": [
+						"api",
+						"bids",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getMyBids",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cnrprod1725867198-team-77958-33997.avito2024.codenrock.com/api/bids/my?username=Another&limit=3&offset=0",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bids",
+						"my"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "Another"
+						},
+						{
+							"key": "limit",
+							"value": "3"
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTenderBids",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cnrprod1725867198-team-77958-33997.avito2024.codenrock.com/api/bids/afd8fe14-0225-4b16-afb2-632ca5bde6bc/list?username=Test1&limit=3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bids",
+						"afd8fe14-0225-4b16-afb2-632ca5bde6bc",
+						"list"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "Test1"
+						},
+						{
+							"key": "limit",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBidStatus",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cnrprod1725867198-team-77958-33997.avito2024.codenrock.com/api/bids/902881d3-0c6e-4812-afba-b95cd6fe00a8/status?username=Test1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bids",
+						"902881d3-0c6e-4812-afba-b95cd6fe00a8",
+						"status"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "Test1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateBidStatus",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://cnrprod1725867198-team-77958-33997.avito2024.codenrock.com/api/bids/902881d3-0c6e-4812-afba-b95cd6fe00a8/status?username=Test1&status=Canceled",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bids",
+						"902881d3-0c6e-4812-afba-b95cd6fe00a8",
+						"status"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "Test1"
+						},
+						{
+							"key": "status",
+							"value": "Canceled"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "submitDecision",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://cnrprod1725867198-team-77958-33997.avito2024.codenrock.com/api/bids/902881d3-0c6e-4812-afba-b95cd6fe00a8/submit_decision?decision=Approved&username=Test1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bids",
+						"902881d3-0c6e-4812-afba-b95cd6fe00a8",
+						"submit_decision"
+					],
+					"query": [
+						{
+							"key": "decision",
+							"value": "Approved"
+						},
+						{
+							"key": "username",
+							"value": "Test1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateTender",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"NNNNNNNNNNN\",\n    \"serviceType\": \"Construction\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cnrprod1725867198-team-77958-33997.avito2024.codenrock.com/api/tenders/dbcc8d9c-abc2-4d6e-ab2a-dc3600b78aa4/edit?username=user30",
+					"protocol": "https",
+					"host": [
+						"cnrprod1725867198-team-77958-33997",
+						"avito2024",
+						"codenrock",
+						"com"
+					],
+					"path": [
+						"api",
+						"tenders",
+						"dbcc8d9c-abc2-4d6e-ab2a-dc3600b78aa4",
+						"edit"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "user30"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "rollbackTender",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://cnrprod1725867198-team-77958-33997.avito2024.codenrock.com/api/tenders/5b63c8d5-864b-45f2-adf4-7431f0b836cb/rollback/5?username=Test1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tenders",
+						"5b63c8d5-864b-45f2-adf4-7431f0b836cb",
+						"rollback",
+						"5"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "Test1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateBid",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"From user update\",\n    \"description\": \"WORKS!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cnrprod1725867198-team-77958-33997.avito2024.codenrock.com/api/bids/10038175-af4e-44d6-9a86-77e1d8687361/edit?username=user17",
+					"protocol": "https",
+					"host": [
+						"cnrprod1725867198-team-77958-33997",
+						"avito2024",
+						"codenrock",
+						"com"
+					],
+					"path": [
+						"api",
+						"bids",
+						"10038175-af4e-44d6-9a86-77e1d8687361",
+						"edit"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "user17"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "rollbackBid",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://cnrprod1725867198-team-77958-33997.avito2024.codenrock.com/api/bids/abdf504b-f538-4632-97ef-3b110c313530/rollback/1?username=user8",
+					"protocol": "https",
+					"host": [
+						"cnrprod1725867198-team-77958-33997",
+						"avito2024",
+						"codenrock",
+						"com"
+					],
+					"path": [
+						"api",
+						"bids",
+						"abdf504b-f538-4632-97ef-3b110c313530",
+						"rollback",
+						"1"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "user8"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cnrprod1725867198-team-77958-33997.avito2024.codenrock.com/api/ping",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"ping"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
